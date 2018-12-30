@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Aplikacja wspomagająca planowanie tygodnia</string>
+    <string name="drawer_opened">Otwarte</string>
+    <string name="drawer_close">Zamkniete</string>
+    <string name="selected_one">Zaznaczono jeden</string>
+    <string name="selected_more">Zaznaczono </string>
+    <string name="start">Start</string>
+    <string name="viewI">Wydarzenia</string>
+    <string name="viewII">Lista zakupów</string>
+    <string name="viewIII">Notatnik</string>
+    <string name="second_fragment_string">Tu kiedyś będzie lista Twoich wydarzeń</string>
+
+
+    <string-array name="mainlist">
+        <item>Jabłka</item>
+        <item>Banan</item>
+        <item>Winogrona</item>
+    </string-array>
+
+    <string-array name="superPics">
+        <item>@drawable/apple_fruit_500x500</item>
+        <item>@drawable/fresh_banana_500x500</item>
+        <item>@drawable/thompson_grapes_500x500</item>
+    </string-array>
+    <string-array name="detailed">
+        <item>Kup: 5 jabłek</item>
+        <item>Kup: 2 banany</item>
+        <item>Kup: 0,5 kg winogron</item>
+    </string-array>
+
+    <plurals name="oneManyStr">
+        <item quantity="zero"></item>
+        <item quantity="one"> Wybrano jeden</item>
+        <item quantity="other"> Wybrano %d</item>
+    </plurals>
+
+
+</resources>

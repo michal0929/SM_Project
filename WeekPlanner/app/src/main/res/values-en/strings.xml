@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Application supporting week planning</string>
+    <string name="drawer_opened">Open</string>
+    <string name="drawer_close">Closed</string>
+    <string name="selected_one">Selected one</string>
+    <string name="selected_more">Selected </string>
+    <string name="start">Start</string>
+    <string name="viewI">Events</string>
+    <string name="viewII">Shopping lists</string>
+    <string name="viewIII">Notebook</string>g>
+    <string name="second_fragment_string">There will be a list of your events here one day</string>
+
+
+    <string-array name="mainlist">
+        <item>Apple</item>
+        <item>Banana</item>
+        <item>Grapes</item>
+    </string-array>
+
+    <string-array name="superPics">
+        <item>@drawable/apple_fruit_500x500</item>
+        <item>@drawable/fresh_banana_500x500</item>
+        <item>@drawable/thompson_grapes_500x500</item>
+    </string-array>
+    <string-array name="detailed">
+        <item>Buy: 5 apples </item>
+        <item>Buy: 2 bananas</item>
+        <item>Buy: 0,5kg grapes</item>
+    </string-array>
+
+    <plurals name="oneManyStr">
+        <item quantity="zero"></item>
+        <item quantity="one"> One selected</item>
+        <item quantity="other"> %d selected</item>
+    </plurals>
+</resources>
