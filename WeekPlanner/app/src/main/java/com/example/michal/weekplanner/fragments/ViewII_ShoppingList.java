@@ -2,7 +2,6 @@ package com.example.michal.weekplanner.fragments;
 
 import android.app.Fragment;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -17,12 +16,17 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import com.example.michal.weekplanner.R;
 import com.example.michal.weekplanner.adapters.CustomListAdapter;
+import com.example.michal.weekplanner.model.Event;
+import com.example.michal.weekplanner.model.ItemListNotebook;
 import com.example.michal.weekplanner.model.RowItem;
+
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class ViewII_ShoppingList extends Fragment {
+
+
 
     ListView myListView;
     List<RowItem> rowItemsList;
@@ -68,15 +72,22 @@ public class ViewII_ShoppingList extends Fragment {
         myListView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
 
         myListView.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
-
-
             @Override
             public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked) {
-                int count =myListView.getCheckedItemCount();
-                Resources res  = getResources();
-                String cStr = res.getQuantityString(R.plurals.oneManyStr, count, count);
-
-                mode.setTitle(cStr);
+                final int checkedCount = myListView.getCheckedItemCount();
+                switch (checkedCount) {
+                    case 0:
+                        mode.setTitle(null);
+                        break;
+                    case 1:
+                        mode.setTitle(R.string.selected_one);
+                        break;
+                    default:
+                        String mystring = getResources().getString(R.string.selected_more);
+                        mystring+=" ";
+                        mode.setTitle(mystring+checkedCount);
+                        break;
+                }
             }
 
             @Override
@@ -86,13 +97,13 @@ public class ViewII_ShoppingList extends Fragment {
 
             @Override
             public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
-               return false;
+                return false;
             }
 
             @Override
-           public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-            return false;
-           }
+            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+                return false;
+            }
 
             @Override
             public void onDestroyActionMode(ActionMode mode) {

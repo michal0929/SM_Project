@@ -33,6 +33,7 @@
         <item quantity="one"> Wybrano jeden</item>
         <item quantity="other"> Wybrano %d</item>
     </plurals>
+    <string name="title_activity_view_1">View_1</string>
 
 
 </resources>

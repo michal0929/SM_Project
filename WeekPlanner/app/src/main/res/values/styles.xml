@@ -6,7 +6,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="activated" parent="AppTheme"> // styl do pojedynczego zakupu
+    <style name="activated" parent="AppTheme">// styl do pojedynczego zakupu
         <item name="android:background">?android:attr/activatedBackgroundIndicator</item>
     </style>
 
@@ -17,7 +17,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/title_text</item>
     </style>
-    
+
     <style name="MainLabel">
         <item name="android:textColor">@color/ventaBlack</item>
         <item name="android:layout_width">wrap_content</item>
@@ -25,6 +25,15 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/title_text</item>
     </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
 </resources>

@@ -7,14 +7,17 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.michal.weekplanner.R;
+import com.example.michal.weekplanner.model.Event;
+import com.example.michal.weekplanner.model.ItemListNotebook;
 import com.example.michal.weekplanner.model.RowItem;
+
 import java.util.List;
 
 
 public class CustomListAdapter extends BaseAdapter {
 
     private Context context;
-    private List<RowItem> itemList;
+    private List<RowItem>itemList;
     public CustomListAdapter(Context context, List<RowItem> itemList)
     {
         this.context=context;
@@ -44,4 +47,5 @@ public class CustomListAdapter extends BaseAdapter {
         imageView.setImageResource(itemList.get(position).getPicture());
         return v;
     }
+
 }

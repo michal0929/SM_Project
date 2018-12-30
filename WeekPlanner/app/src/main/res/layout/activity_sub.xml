@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.michal.zadanie6.fragments.ViewII_ShoppingList_Add">
+    tools:context="com.example.michal.weekplanner.fragments.ViewII_ShoppingList_Add">
 
     <ImageView
         android:id="@+id/imageSub"

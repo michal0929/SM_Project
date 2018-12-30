@@ -113,15 +113,13 @@ public class MainActivity extends AppCompatActivity {
                 fragment= new Start();
                 break;
             case 1:
-                fragment=new View_Events();
+                fragment= new View_Events();
                 break;
             case 2:
                 fragment= new ViewII_ShoppingList();
                 break;
-            case 3:
-                fragment= new ViewIII_Notebook();
             default:
-                fragment= new Start();
+                fragment= new ViewIII_Notebook();
                 break;
         }
         if(null!=fragment)
