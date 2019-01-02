@@ -6,7 +6,7 @@ public class ItemList {
 
 
 
-    public ItemList(String title, int picture, String desc)
+    public ItemList(String title, String desc)
     {
         this.title=title;
         this.desc=desc;

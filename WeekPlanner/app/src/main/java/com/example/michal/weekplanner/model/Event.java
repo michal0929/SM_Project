@@ -1,7 +1,9 @@
 package com.example.michal.weekplanner.model;
 
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class Event {
     private String title;
@@ -25,7 +27,10 @@ public class Event {
         this.title = title;
     }
 
-    public Date getData() { return data;
+    public String getData() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.US);
+        String time=sdf.format(data);
+        return time;
     }
 
     public void setData(Date data) {

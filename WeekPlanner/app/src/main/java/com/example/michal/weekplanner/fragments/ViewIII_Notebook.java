@@ -16,10 +16,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.michal.weekplanner.R;
-import com.example.michal.weekplanner.adapters.CustomListAdapter;
-import com.example.michal.weekplanner.model.Event;
+import com.example.michal.weekplanner.adapters.ViewIII_ItemListNotebookAdapter;
 import com.example.michal.weekplanner.model.ItemListNotebook;
-import com.example.michal.weekplanner.model.RowItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,8 +26,8 @@ public class ViewIII_Notebook extends Fragment {
 
 
     ListView myListView;
-    List<RowItem> rowItemsList;
-    CustomListAdapter adapter;
+    List<ItemListNotebook> itemsListListNotebook;
+    ViewIII_ItemListNotebookAdapter adapter;
 
     String[] productName;
     String[] productDesc;
@@ -44,7 +42,7 @@ public class ViewIII_Notebook extends Fragment {
 
         myListView=(ListView)rootView.findViewById(R.id.mySuperListView);
 
-        rowItemsList=new ArrayList<>();
+        itemsListListNotebook =new ArrayList<>();
 
         productName=getResources().getStringArray(R.array.mainlist);
         productPics=getResources().obtainTypedArray(R.array.superPics);
@@ -52,10 +50,10 @@ public class ViewIII_Notebook extends Fragment {
 
         for(int i=0;i<productName.length;i++)
         {
-            rowItemsList.add(new RowItem(productName[i],productPics.getResourceId(i,-1), productDesc[i]));
+            itemsListListNotebook.add(new ItemListNotebook(productName[i],productPics.getResourceId(i,-1), productDesc[i]));
         }
 
-        adapter=new CustomListAdapter(getActivity(), rowItemsList);
+        adapter=new ViewIII_ItemListNotebookAdapter(getActivity(), itemsListListNotebook);
 
         myListView.setAdapter(adapter);
 

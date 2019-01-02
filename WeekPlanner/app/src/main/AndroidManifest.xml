@@ -17,9 +17,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".fragments.View_1"
-            android:label="@string/title_activity_view_1"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:name=".fragments.ViewII_ShoppingList_Add"/>
     </application>
 
 </manifest>

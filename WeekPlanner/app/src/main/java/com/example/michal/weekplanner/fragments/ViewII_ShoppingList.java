@@ -1,8 +1,6 @@
 package com.example.michal.weekplanner.fragments;
 
 import android.app.Fragment;
-import android.content.Intent;
-import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.ActionMode;
@@ -12,13 +10,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import com.example.michal.weekplanner.R;
-import com.example.michal.weekplanner.adapters.CustomListAdapter;
-import com.example.michal.weekplanner.model.Event;
-import com.example.michal.weekplanner.model.ItemListNotebook;
-import com.example.michal.weekplanner.model.RowItem;
+import com.example.michal.weekplanner.adapters.ViewII_ItemListAdapter;
+import com.example.michal.weekplanner.model.ItemList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,12 +24,11 @@ public class ViewII_ShoppingList extends Fragment {
 
 
     ListView myListView;
-    List<RowItem> rowItemsList;
-    CustomListAdapter adapter;
+    List<ItemList> ItemsList;
+    ViewII_ItemListAdapter adapter;
 
     String[] productName;
     String[] productDesc;
-    TypedArray productPics;
 
 
     @Nullable
@@ -45,29 +39,28 @@ public class ViewII_ShoppingList extends Fragment {
 
         myListView=(ListView)rootView.findViewById(R.id.mySuperListView);
 
-        rowItemsList=new ArrayList<>();
+        ItemsList=new ArrayList<>();
 
         productName=getResources().getStringArray(R.array.mainlist);
-        productPics=getResources().obtainTypedArray(R.array.superPics);
         productDesc=getResources().getStringArray(R.array.detailed);
 
         for(int i=0;i<productName.length;i++)
         {
-            rowItemsList.add(new RowItem(productName[i],productPics.getResourceId(i,-1), productDesc[i]));
+            ItemsList.add(new ItemList(productName[i], productDesc[i]));
         }
 
-        adapter=new CustomListAdapter(getActivity(), rowItemsList);
+        adapter=new ViewII_ItemListAdapter(getActivity(), ItemsList);
 
         myListView.setAdapter(adapter);
 
-        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(), ViewII_ShoppingList_Add.class);
-                intent.putExtra("postition",position);
-                startActivity(intent);
-            }
-        });
+//        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Intent intent = new Intent(getActivity(), ViewII_ShoppingList_Add.class);
+//                intent.putExtra("postition",position);
+//                startActivity(intent);
+//            }
+//        });
 
         myListView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
 

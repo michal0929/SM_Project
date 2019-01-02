@@ -1,5 +1,6 @@
 package com.example.michal.weekplanner.model;
 
+
 public class ItemListNotebook {
     private String title;
     private int picture;
@@ -37,6 +38,8 @@ public class ItemListNotebook {
     public void setDesc(String desc) {
         this.desc = desc;
     }
+
+
 
 
 
