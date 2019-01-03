@@ -28,6 +28,7 @@
     <string name="add2">Add</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
+    <string name="Buy">Buy: </string>
 
 
     <string-array name="mainlist">

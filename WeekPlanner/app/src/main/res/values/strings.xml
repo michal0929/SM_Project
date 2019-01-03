@@ -27,6 +27,7 @@
     <string name="add2">Dodaj</string>
     <string name="cancel">Anuluj</string>
     <string name="save">Zapisz</string>
+    <string name="Buy">Kup: </string>
 
 
     <string-array name="mainlist">

@@ -45,7 +45,7 @@ public class ViewIII_Notebook extends Fragment {
 
         View rootView=inflater.inflate(R.layout.view3,container,false);
 
-        myListView=(ListView)rootView.findViewById(R.id.mySuperListView);
+        myListView=(ListView)rootView.findViewById(R.id.mySuperListView3);
 
         itemsListListNotebook =new ArrayList<>();
 

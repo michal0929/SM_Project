@@ -3,6 +3,7 @@ package com.example.michal.weekplanner;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.arch.persistence.room.Room;
 import android.content.Context;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -12,9 +13,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.example.michal.weekplanner.model.ItemList;
 import com.example.michal.weekplanner.model.ItemSlideMenu;
 import com.example.michal.weekplanner.adapters.SlideMenuAdapter;
 import com.example.michal.weekplanner.fragments.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private Context context;
     private ActionBarDrawerToggle actionBarDrawerToggle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,6 +111,8 @@ public class MainActivity extends AppCompatActivity {
 
     private  void replaceFragment(int pos)
     {
+        Context appContext = getApplicationContext();
+        AppDatabase database = Room.databaseBuilder(appContext, AppDatabase.class, AppDatabase.DATABASE_NAME).allowMainThreadQueries().build();
         Fragment fragment=null;
         switch(pos)
         {
@@ -116,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
                 fragment= new View_Events();
                 break;
             case 2:
-                fragment= new ViewII_ShoppingList();
+                fragment= new ViewII_ShoppingList(database);
                 break;
             default:
                 fragment= new ViewIII_Notebook();

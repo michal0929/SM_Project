@@ -42,7 +42,7 @@ public class View_Events extends Fragment {
 
         View rootView=inflater.inflate(R.layout.view1,container,false);
 
-        myListView=(ListView)rootView.findViewById(R.id.mySuperListView);
+        myListView=(ListView)rootView.findViewById(R.id.mySuperListView1);
 
         rowItemsList=new ArrayList<>();
 
