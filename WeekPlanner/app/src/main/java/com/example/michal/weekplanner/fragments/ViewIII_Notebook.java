@@ -5,16 +5,21 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.michal.weekplanner.MainActivity;
 import com.example.michal.weekplanner.R;
 import com.example.michal.weekplanner.adapters.ViewIII_ItemListNotebookAdapter;
 import com.example.michal.weekplanner.model.ItemListNotebook;
@@ -38,7 +43,7 @@ public class ViewIII_Notebook extends Fragment {
     @Override
     public View onCreateView(final LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
-        View rootView=inflater.inflate(R.layout.view2,container,false);
+        View rootView=inflater.inflate(R.layout.view3,container,false);
 
         myListView=(ListView)rootView.findViewById(R.id.mySuperListView);
 
@@ -60,13 +65,12 @@ public class ViewIII_Notebook extends Fragment {
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(), ViewII_ShoppingList_Add.class);
+                Intent intent = new Intent(getActivity(), ViewIII_Notebook_Details.class);
                 intent.putExtra("postition",position);
                 startActivity(intent);
             }
         });
 
-        myListView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
 
         myListView.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
             @Override
@@ -89,6 +93,8 @@ public class ViewIII_Notebook extends Fragment {
 
             @Override
             public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+                MenuInflater inflater1=mode.getMenuInflater();
+                inflater1.inflate(R.menu.my_menu,menu);
                 return true;
             }
 

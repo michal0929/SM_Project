@@ -4,14 +4,12 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.michal.weekplanner.R;
 import com.example.michal.weekplanner.model.Event;
 
 
-import java.util.Date;
 import java.util.List;
 
 
@@ -41,7 +39,7 @@ public class View_EventListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View v=View.inflate(context, R.layout.list_item_shop,null);
+        View v=View.inflate(context, R.layout.view1_list_event,null);
         TextView titleText=(TextView)v.findViewById(R.id.item_title);
         TextView data=(TextView)v.findViewById(R.id.date);
         titleText.setText(eventList.get(position).getTitle());

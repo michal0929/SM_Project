@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.michal.weekplanner.R;
 
-public class ViewII_ShoppingList_Add extends AppCompatActivity {
+public class ViewIII_Notebook_Details extends AppCompatActivity {
     String productName;
     String productDesc;
     int productPics;
@@ -19,8 +19,9 @@ public class ViewII_ShoppingList_Add extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sub);
+        setContentView(R.layout.view3_list_item_detail);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(R.string.vIII_details);
         titleSub=(TextView)findViewById(R.id.textTitleSub);
         imageSub=(ImageView)findViewById(R.id.imageSub);
         detaiSub=(TextView)findViewById(R.id.textDetailSub);

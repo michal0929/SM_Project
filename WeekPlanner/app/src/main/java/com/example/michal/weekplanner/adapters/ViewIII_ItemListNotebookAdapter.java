@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.michal.weekplanner.R;
 import com.example.michal.weekplanner.model.ItemListNotebook;
@@ -38,11 +37,11 @@ public class ViewIII_ItemListNotebookAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View v=View.inflate(context, R.layout.list_item,null);
-        TextView titleText=(TextView)v.findViewById(R.id.textfortitile);
-        ImageView imageView=(ImageView)v.findViewById(R.id.imageplz);
+        View v=View.inflate(context, R.layout.view3_list_item,null);
+        TextView titleText=(TextView)v.findViewById(R.id.item);
+        TextView desc=(TextView)v.findViewById(R.id.desc);
         titleText.setText(itemListNotebook.get(position).getTitle());
-        imageView.setImageResource(itemListNotebook.get(position).getPicture());
+        desc.setText(itemListNotebook.get(position).getDesc());
         return v;
     }
 

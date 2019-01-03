@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.michal.weekplanner.fragments.ViewIII_Notebook_Details">
+
+    <TextView
+        android:id="@+id/textTitleSub3"
+        style="@style/MainLabel" />
+
+    <TextView
+        android:id="@+id/date1"
+        style="@style/drawerSprStyle" />
+    <TextView
+        android:id="@+id/gps1"
+        style="@style/drawerSprStyle" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/edit1"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="@string/edit" />
+
+        <Button
+            android:id="@+id/detele1"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="@string/delete" />
+    </LinearLayout>
+
+</LinearLayout>

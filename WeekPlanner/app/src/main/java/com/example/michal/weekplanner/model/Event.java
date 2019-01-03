@@ -28,7 +28,7 @@ public class Event {
     }
 
     public String getData() {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.US);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:SS", Locale.US);
         String time=sdf.format(data);
         return time;
     }

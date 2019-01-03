@@ -38,7 +38,7 @@ public class ViewII_ItemListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View v=View.inflate(context, R.layout.list_event,null);
+        View v=View.inflate(context, R.layout.view2_list_item_shop,null);
         TextView titleText=(TextView)v.findViewById(R.id.item_title_shop);
         TextView data=(TextView)v.findViewById(R.id.quantity);
         titleText.setText(ItemList.get(position).getTitle());

@@ -13,12 +13,13 @@
             android:id="@+id/item_title"
             style="@style/MainLabel"
             android:layout_width="150dp"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
             android:text="item" />
+
         <TextView
             android:id="@+id/date"
             style="@style/MainLabel"
-            android:layout_width="150dp"
+            android:layout_width="156dp"
             android:layout_height="match_parent"
             android:text="item" />
 

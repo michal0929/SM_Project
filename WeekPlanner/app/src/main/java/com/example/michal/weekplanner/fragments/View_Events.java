@@ -1,15 +1,18 @@
 package com.example.michal.weekplanner.fragments;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.michal.weekplanner.R;
@@ -37,7 +40,7 @@ public class View_Events extends Fragment {
     @Override
     public View onCreateView(final LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
-        View rootView=inflater.inflate(R.layout.view2,container,false);
+        View rootView=inflater.inflate(R.layout.view1,container,false);
 
         myListView=(ListView)rootView.findViewById(R.id.mySuperListView);
 
@@ -55,14 +58,14 @@ public class View_Events extends Fragment {
 
         myListView.setAdapter(adapter);
 
-//        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Intent intent = new Intent(getActivity(), ViewII_ShoppingList_Add.class);
-//                intent.putExtra("postition",position);
-//                startActivity(intent);
-//            }
-//        });
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getActivity(), View_Events_Details.class);
+                intent.putExtra("postition",position);
+                startActivity(intent);
+            }
+        });
 
         myListView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
 
@@ -87,6 +90,8 @@ public class View_Events extends Fragment {
 
             @Override
             public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+                MenuInflater inflater1=mode.getMenuInflater();
+                inflater1.inflate(R.menu.my_menu,menu);
                 return true;
             }
 

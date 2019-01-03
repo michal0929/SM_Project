@@ -1,14 +1,32 @@
 <resources>
-    <string name="app_name">Aplikacja wspomagająca planowanie tygodnia</string>
+    <string name="app_name">Planer tygodnia</string>
     <string name="drawer_opened">Otwarte</string>
     <string name="drawer_close">Zamkniete</string>
     <string name="selected_one">Zaznaczono jeden</string>
     <string name="selected_more">Zaznaczono </string>
+
     <string name="start">Start</string>
     <string name="viewI">Wydarzenia</string>
     <string name="viewII">Lista zakupów</string>
     <string name="viewIII">Notatnik</string>
-    <string name="second_fragment_string">Tu kiedyś będzie lista Twoich wydarzeń</string>
+
+    <string name="vI_details">Szczegóły wydarzenia</string>
+    <string name="vII_details">Szczegóły produktu</string>
+    <string name="vIII_details">Szczegóły notatki</string>
+
+    <string name="delete">Usuń</string>
+    <string name="edit">Edytuj</string>
+    <string name="add1">Dodaj nowy wpis</string>
+
+    <string name="title">Tytuł</string>
+    <string name="data">Data</string>
+    <string name="quantity">Ilość</string>
+    <string name="description">Opis</string>
+    <string name="localization">Localizacja</string>
+    <string name="foto">Foto</string>
+    <string name="add2">Dodaj</string>
+    <string name="cancel">Anuluj</string>
+    <string name="save">Zapisz</string>
 
 
     <string-array name="mainlist">

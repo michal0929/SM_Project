@@ -17,7 +17,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".fragments.ViewII_ShoppingList_Add"/>
+            android:name=".fragments.ViewIII_Notebook_Details"/>
+        <activity
+            android:name=".fragments.ViewII_ShoppingList_Details"/>
+        <activity
+            android:name=".fragments.View_Events_Details"/>
     </application>
 
 </manifest>

@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Application supporting week planning</string>
+    <string name="app_name">WeekPlanner</string>
     <string name="drawer_opened">Open</string>
     <string name="drawer_close">Closed</string>
     <string name="selected_one">Selected one</string>
     <string name="selected_more">Selected </string>
+
     <string name="start">Start</string>
     <string name="viewI">Events</string>
     <string name="viewII">Shopping lists</string>
-    <string name="viewIII">Notebook</string>g>
-    <string name="second_fragment_string">There will be a list of your events here one day</string>
+    <string name="viewIII">Notebook</string>
+
+    <string name="vI_details">Detail events</string>
+    <string name="vII_details">Detail product</string>
+    <string name="vIII_details">Detail notes</string>
+
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="add1">Add a new entry</string>
+
+    <string name="title">Title</string>
+    <string name="data">Date</string>
+    <string name="quantity">Quantity</string>
+    <string name="description">Description</string>
+    <string name="localization">Localization</string>
+    <string name="foto">Foto</string>
+    <string name="add2">Add</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
 
 
     <string-array name="mainlist">

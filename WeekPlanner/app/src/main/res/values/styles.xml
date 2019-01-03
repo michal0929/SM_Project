@@ -25,6 +25,10 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/title_text</item>
     </style>
-
+    <style name="MainLabel.notebook">
+        <item name="android:textColor">@color/ventaBlack</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/title_text</item>
+    </style>
 
 </resources>
