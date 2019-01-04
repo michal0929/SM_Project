@@ -1,5 +1,6 @@
-package com.example.michal.weekplanner.fragments;
+package com.example.michal.weekplanner.fragments.ViewII;
 
+import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,59 +14,70 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.michal.weekplanner.AppDatabase;
 import com.example.michal.weekplanner.R;
-import com.example.michal.weekplanner.adapters.View_EventListAdapter;
-import com.example.michal.weekplanner.model.Event;
+import com.example.michal.weekplanner.adapters.ViewII_ItemListAdapter;
+import com.example.michal.weekplanner.model.ItemList;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 
-public class View_Events extends Fragment {
+public class ViewII_ShoppingList extends Fragment {
 
 
+    public static final String ID_TAG = "ElementID";
     ListView myListView;
-    List<Event> rowItemsList;
-    View_EventListAdapter adapter;
+    List<ItemList> ItemsList;
+    ViewII_ItemListAdapter adapter;
 
-    String[] productName;
-    String[] productDesc;
-    Date productData;
+    private AppDatabase database;
+    @SuppressLint("ValidFragment")
+    public ViewII_ShoppingList(AppDatabase database) {
+        this.database = database;
+    }
 
 
-    @Nullable
     @Override
     public View onCreateView(final LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-        View rootView=inflater.inflate(R.layout.view1,container,false);
 
-        myListView=(ListView)rootView.findViewById(R.id.mySuperListView1);
+        ItemsList=new ArrayList<>();
+        database.elementShoppingDao().insertAll();
+        ItemsList = database.elementShoppingDao().getAllElements();
+        View rootView=inflater.inflate(R.layout.view2,container,false);
 
-        rowItemsList=new ArrayList<>();
+        myListView=(ListView)rootView.findViewById(R.id.mySuperListView2);
 
-        productName=getResources().getStringArray(R.array.mainlist);
-        productDesc=getResources().getStringArray(R.array.detailed);
-
-        for(int i=0;i<productName.length;i++)
-        {
-            rowItemsList.add(new Event(productName[i],new Date(1220,12,11), productDesc[i]));
-        }
-
-        adapter= new View_EventListAdapter(getActivity(), rowItemsList);
+        adapter=new ViewII_ItemListAdapter(getActivity(), ItemsList);
 
         myListView.setAdapter(adapter);
 
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(), View_Events_Details.class);
-                intent.putExtra("postition",position);
+                int ID = ItemsList.get(position).getId();
+                Intent intent = new Intent(getActivity(), ViewII_ShoppingList_Details.class);
+                intent.putExtra(ID_TAG, ID);
                 startActivity(intent);
             }
         });
+
+        Button button = rootView.findViewById(R.id.button2);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(getActivity(), ViewII_ShoppingList_Add.class);
+                startActivity(myIntent);
+                myListView.invalidateViews();
+            }
+        });
+
+
 
         myListView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
 
@@ -113,4 +125,7 @@ public class View_Events extends Fragment {
 
         return rootView;
     }
+
+
+
 }

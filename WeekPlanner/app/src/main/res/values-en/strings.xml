@@ -29,24 +29,11 @@
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
     <string name="Buy">Buy: </string>
+    <string name="pressure">The pressure is: </string>
+    <string name="Biometr">Biomet for today</string>
+    <string name="Biometrplus">Biomet beneficial</string>
+    <string name="Biometrminus">Biomet unfavorable</string>
 
-
-    <string-array name="mainlist">
-        <item>Apple</item>
-        <item>Banana</item>
-        <item>Grapes</item>
-    </string-array>
-
-    <string-array name="superPics">
-        <item>@drawable/apple_fruit_500x500</item>
-        <item>@drawable/fresh_banana_500x500</item>
-        <item>@drawable/thompson_grapes_500x500</item>
-    </string-array>
-    <string-array name="detailed">
-        <item>Buy: 5 apples </item>
-        <item>Buy: 2 bananas</item>
-        <item>Buy: 0,5kg grapes</item>
-    </string-array>
 
     <plurals name="oneManyStr">
         <item quantity="zero"></item>

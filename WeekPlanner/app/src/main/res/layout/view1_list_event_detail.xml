@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.michal.weekplanner.fragments.ViewIII_Notebook_Details">
+    tools:context="com.example.michal.weekplanner.fragments.ViewIII.ViewIII_Notebook_Details">
 
     <TextView
         android:id="@+id/textTitleSub3"
@@ -12,6 +12,9 @@
 
     <TextView
         android:id="@+id/date1"
+        style="@style/drawerSprStyle" />
+    <TextView
+        android:id="@+id/desc1"
         style="@style/drawerSprStyle" />
     <TextView
         android:id="@+id/gps1"

@@ -3,7 +3,6 @@ package com.example.michal.weekplanner;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
-import android.content.ClipData;
 
 import com.example.michal.weekplanner.model.ItemList;
 

@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
-    //tools:context="com.PS10.mk.zadanie.ElementCreateActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -39,6 +37,19 @@
         android:textSize="14sp" />
 
     <EditText
+        android:id="@+id/localText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/description"
+        android:textSize="14sp" />
+
+    <EditText
         android:id="@+id/descriptionText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,14 +62,14 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/adevent"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:text="@string/add2" />
 
         <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
+            android:id="@+id/canceeventadd"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:text="@string/cancel" />
     </LinearLayout>

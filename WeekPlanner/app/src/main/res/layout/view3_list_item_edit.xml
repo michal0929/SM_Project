@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
-    //tools:context="com.PS10.mk.zadanie.ElementCreateActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -25,20 +24,11 @@
         android:textSize="14sp" />
 
     <EditText
-        android:id="@+id/descriptionedit"
+        android:id="@+id/descriptionedit3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="105dp"
         android:ems="10"
         android:inputType="textMultiLine" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/foto"
-        android:textSize="14sp" />
-
-
 
     <Button
         android:id="@+id/button3"

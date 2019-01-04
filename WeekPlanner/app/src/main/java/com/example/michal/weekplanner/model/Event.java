@@ -1,23 +1,29 @@
 package com.example.michal.weekplanner.model;
 
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
 
+
+
+@Entity
 public class Event {
-    private String title;
-    private Date data;
-    private String desc;
 
+    @PrimaryKey(autoGenerate = true)
+    private int id;
 
-
-    public Event(String title, Date data, String desc)
-    {
-        this.data=data;
-        this.title=title;
-        this.desc=desc;
+    public int getId() {
+        return id;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
+        @ColumnInfo(name = "title1")
+        private String title;
 
     public String getTitle() {
         return title;
@@ -27,17 +33,21 @@ public class Event {
         this.title = title;
     }
 
-    public String getData() {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:SS", Locale.US);
-        String time=sdf.format(data);
-        return time;
+        @ColumnInfo(name = "data1")
+        private String data;
+
+        public String getData() {
+        return data;
     }
 
-    public void setData(Date data) {
+    public void setData(String data) {
         this.data = data;
     }
 
-    public String getDesc(){
+        @ColumnInfo(name = "desc1")
+        private String desc;
+
+        public String getDesc(){
         return desc;
     }
 
@@ -45,5 +55,28 @@ public class Event {
         this.desc = desc;
     }
 
+        @ColumnInfo(name = "GPS1")
+        private String GPS;
 
+        public String getGPS(){
+        return GPS;
+    }
+
+    public void setGPS(String GPS) {
+        this.GPS = GPS;
+    }
+
+    public Event(String title, String data, String desc,String GPS)
+        {
+            this.title=title;
+            this.data=data;
+            this.desc=desc;
+            this.GPS=GPS;
+
+
+        }
+
+        public String toString() {
+            return  this.title + "\n" + this.data+ "\n" + this.desc+ "\n" + this.GPS;
+        }
 }

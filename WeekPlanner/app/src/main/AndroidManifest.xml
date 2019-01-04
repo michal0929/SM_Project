@@ -17,15 +17,25 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".fragments.ViewIII_Notebook_Details"/>
+            android:name=".fragments.ViewIII.ViewIII_Notebook_Edit"/>
         <activity
-            android:name=".fragments.ViewII_ShoppingList_Add"/>
+            android:name=".fragments.ViewIII.ViewIII_Notebook_Add"/>
         <activity
-            android:name=".fragments.ViewII_ShoppingList_Edit"/>
+            android:name=".fragments.ViewIII.ViewIII_Notebook_Details"/>
         <activity
-            android:name=".fragments.ViewII_ShoppingList_Details"/>
+            android:name=".fragments.ViewII.ViewII_ShoppingList_Add"/>
         <activity
-            android:name=".fragments.View_Events_Details"/>
+            android:name=".fragments.ViewII.ViewII_ShoppingList_Edit"/>
+        <activity
+            android:name=".fragments.ViewII.ViewII_ShoppingList_Details"/>
+        <activity
+            android:name=".fragments.View.View_Events_Edit"/>
+        <activity
+            android:name=".fragments.View.View_Events_Add"/>
+        <activity
+            android:name=".fragments.View.View_Events_Details"/>
+        <activity
+            android:name=".fragments.Start.Biometr"/>
     </application>
 
 </manifest>

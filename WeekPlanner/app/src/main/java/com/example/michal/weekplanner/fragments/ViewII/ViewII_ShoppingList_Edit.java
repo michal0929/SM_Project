@@ -1,4 +1,4 @@
-package com.example.michal.weekplanner.fragments;
+package com.example.michal.weekplanner.fragments.ViewII;
 
 import android.arch.persistence.room.Room;
 import android.content.Intent;
@@ -25,7 +25,7 @@ public class ViewII_ShoppingList_Edit extends AppCompatActivity {
         descriptionText = findViewById(R.id.quantityedit);
 
         final int editableId = getIntent().getIntExtra("ID_shop",0);
-        final AppDatabase database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, AppDatabase.DATABASE_NAME).allowMainThreadQueries().build();
+        final AppDatabase database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, AppDatabase.DATABASE_NAME2).allowMainThreadQueries().build();
 
 
         ItemList elementToEdit = database.elementShoppingDao().getElementById(editableId);

@@ -2,5 +2,5 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 <item android:id="@+id/delete"
     android:title="xd"
-    android:icon="@drawable/apple_fruit_500x500"/>
+    android:icon="@drawable/trash_2244789_960_720"/>
 </menu>
