@@ -19,6 +19,7 @@ public class View_Events_Edit extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view1_list_event_edit);
+        getSupportActionBar().setTitle(R.string.editevent);
 
         nameText = findViewById(R.id.nameedit);
         descriptionText = findViewById(R.id.descriptionTextedit);

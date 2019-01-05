@@ -14,6 +14,15 @@
     <string name="vII_details">Szczegóły produktu</string>
     <string name="vIII_details">Szczegóły notatki</string>
 
+    <string name="editevent">Wydarzenia/Edytuj</string>
+    <string name="addevent">Wydarzenia/Dodaj</string>
+
+    <string name="editenotebook">Notatnik/Edytuj/</string>
+    <string name="addnotebook">Notatnik/Dodaj</string>
+
+    <string name="editshop">Lista zakupów/Edytuj</string>
+    <string name="addeshop">Lista zakupów/Dodaj</string>
+
     <string name="delete">Usuń</string>
     <string name="edit">Edytuj</string>
     <string name="add1">Dodaj nowy wpis</string>
@@ -28,9 +37,10 @@
     <string name="cancel">Anuluj</string>
     <string name="save">Zapisz</string>
     <string name="pressure">Ciśnienie wynosi: </string>
-    <string name="Biometr">Biometr na dziś</string>
-    <string name="Biometrplus">Biomet korzystny</string>
-    <string name="Biometrminus">Biomet niekorzystny</string>>
+    <string name="Biometr">Sprawdz warunki biometeo</string>
+    <string name="Biometrplus">Warunki biometeo: korzystne</string>
+    <string name="Biometrminusplus">Warunki biometeo: neutralne</string>
+    <string name="Biometrminus">Warunki biometeo: niekorzystny</string>
 
 
     <plurals name="oneManyStr">

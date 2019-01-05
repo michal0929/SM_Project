@@ -20,6 +20,7 @@ public class ViewIII_Notebook_Edit extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view3_list_item_edit);
+        getSupportActionBar().setTitle(R.string.editenotebook);
 
         nameText = findViewById(R.id.nameTextedit3);
         descriptionText = findViewById(R.id.descriptionedit3);

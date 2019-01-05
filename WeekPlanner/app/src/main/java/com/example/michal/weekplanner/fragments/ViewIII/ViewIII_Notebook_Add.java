@@ -21,6 +21,7 @@ public class ViewIII_Notebook_Add extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.view3_list_item_add);
+        getSupportActionBar().setTitle(R.string.addnotebook);
         nameText = findViewById(R.id.nameTextN);
         descriptionText = findViewById(R.id.descriptionaddN);
 

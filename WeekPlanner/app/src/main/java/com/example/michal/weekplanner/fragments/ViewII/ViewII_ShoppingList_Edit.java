@@ -20,7 +20,7 @@ public class ViewII_ShoppingList_Edit extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view2_list_item_shop_edit);
-
+        getSupportActionBar().setTitle(R.string.editevent);
         nameText = findViewById(R.id.nameTextedit);
         descriptionText = findViewById(R.id.quantityedit);
 

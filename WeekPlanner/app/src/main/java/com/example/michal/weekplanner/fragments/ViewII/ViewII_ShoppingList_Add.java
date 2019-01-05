@@ -19,6 +19,7 @@ public class ViewII_ShoppingList_Add extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view2_list_item_shop_add);
+        getSupportActionBar().setTitle(R.string.addeshop);
 
         nameText = findViewById(R.id.nameText);
         descriptionText = findViewById(R.id.quantityadd);

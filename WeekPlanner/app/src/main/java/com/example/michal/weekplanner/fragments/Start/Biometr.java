@@ -54,8 +54,12 @@ public class Biometr extends AppCompatActivity implements SensorEventListener {
          if(sensor.getType()==Sensor.TYPE_PRESSURE)
         {
             pressureTv.setText(getResources().getText(R.string.pressure)+" "+sensorEvent.values[0]+" hPa");
-            if((sensorEvent.values[0]<999)||(sensorEvent.values[0]>1025)){
+            if((sensorEvent.values[0]<1000)||(sensorEvent.values[0]>1026)){
                 pressQuality.setText(getResources().getText(R.string.Biometrminus));
+            }
+            else
+            if((sensorEvent.values[0]<1006)||(sensorEvent.values[0]>1020)){
+                pressQuality.setText(getResources().getText(R.string.Biometrminusplus));
             }
             else
                 pressQuality.setText(getResources().getText(R.string.Biometrplus));

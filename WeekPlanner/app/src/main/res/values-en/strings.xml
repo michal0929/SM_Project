@@ -15,6 +15,15 @@
     <string name="vII_details">Detail product</string>
     <string name="vIII_details">Detail notes</string>
 
+    <string name="editevent">Event/Edit</string>
+    <string name="addevent">Event/Add</string>
+
+    <string name="editenotebook">Notebook/Edit/</string>
+    <string name="addnotebook">Notebook/Add</string>
+
+    <string name="editshop">Shop List/Edit</string>
+    <string name="addeshop">Shop List/Add</string>
+
     <string name="delete">Delete</string>
     <string name="edit">Edit</string>
     <string name="add1">Add a new entry</string>
@@ -30,9 +39,10 @@
     <string name="save">Save</string>
     <string name="Buy">Buy: </string>
     <string name="pressure">The pressure is: </string>
-    <string name="Biometr">Biomet for today</string>
-    <string name="Biometrplus">Biomet beneficial</string>
-    <string name="Biometrminus">Biomet unfavorable</string>
+    <string name="Biometr">Check the biometeo conditions</string>
+    <string name="Biometrplus">The biometeo conditions: beneficial</string>
+    <string name="Biometrminusplus">The biometeo conditions: neutral</string>
+    <string name="Biometrminus">The biometeo conditions: unfavorable</string>
 
 
     <plurals name="oneManyStr">
