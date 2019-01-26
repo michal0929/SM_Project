@@ -1,4 +1,4 @@
-package com.example.michal.weekplanner.fragments.ViewII;
+package com.example.michal.weekplanner.views.ViewII;
 
 import android.annotation.SuppressLint;
 import android.app.Fragment;
@@ -40,6 +40,15 @@ public class ViewII_ShoppingList extends Fragment {
         this.database = database;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        ItemsList = database.elementShoppingDao().getAllElements();
+        adapter=new ViewII_ItemListAdapter(getActivity(), ItemsList);
+
+        myListView.setAdapter(adapter);
+    }
 
     @Override
     public View onCreateView(final LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {

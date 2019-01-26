@@ -1,4 +1,4 @@
-package com.example.michal.weekplanner.fragments.View;
+package com.example.michal.weekplanner.views.ViewIII;
 
 import android.annotation.SuppressLint;
 import android.app.Fragment;
@@ -19,61 +19,66 @@ import android.widget.ListView;
 
 import com.example.michal.weekplanner.AppDatabase;
 import com.example.michal.weekplanner.R;
-import com.example.michal.weekplanner.adapters.View_EventListAdapter;
-import com.example.michal.weekplanner.model.Event;
-
+import com.example.michal.weekplanner.adapters.ViewIII_ItemListNotebookAdapter;
+import com.example.michal.weekplanner.model.ItemListNotebook;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
-public class View_Events extends Fragment {
+@SuppressLint("ValidFragment")
+public class ViewIII_Notebook extends Fragment {
 
     public static final String ID_TAG = "ElementID";
     ListView myListView;
-    List<Event> EventItemsList;
-    View_EventListAdapter adapter;
+    List<ItemListNotebook> itemsListListNotebook;
+    ViewIII_ItemListNotebookAdapter adapter;
 
     private AppDatabase database;
     @SuppressLint("ValidFragment")
-    public View_Events(AppDatabase database) {
+    public ViewIII_Notebook(AppDatabase database) {
         this.database = database;
     }
+    @Override
+    public void onResume() {
+        super.onResume();
 
+        itemsListListNotebook = database.elementNotebookDao().getAllElementsN();
+        adapter=new ViewIII_ItemListNotebookAdapter(getActivity(), itemsListListNotebook);
 
+        myListView.setAdapter(adapter);
+    }
     @Nullable
     @Override
     public View onCreateView(final LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
 
-        EventItemsList=new ArrayList<>();
-        database.elementEventDao().insertAllE();
-        EventItemsList = database.elementEventDao().getAllElementsE();
 
-        View rootView=inflater.inflate(R.layout.view1,container,false);
+        itemsListListNotebook=new ArrayList<>();
+        database.elementNotebookDao().insertAllN();
+        itemsListListNotebook = database.elementNotebookDao().getAllElementsN();
+        View rootView=inflater.inflate(R.layout.view3,container,false);
 
-        myListView=(ListView)rootView.findViewById(R.id.mySuperListView1);
+        myListView=(ListView)rootView.findViewById(R.id.mySuperListView3);
 
-        adapter= new View_EventListAdapter(getActivity(), EventItemsList);
+        adapter=new ViewIII_ItemListNotebookAdapter(getActivity(), itemsListListNotebook);
 
         myListView.setAdapter(adapter);
 
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                int ID = EventItemsList.get(position).getId();
-                Intent intent = new Intent(getActivity(), View_Events_Details.class);
+                int ID = itemsListListNotebook.get(position).getId();
+                Intent intent = new Intent(getActivity(), ViewIII_Notebook_Details.class);
                 intent.putExtra(ID_TAG, ID);
                 startActivity(intent);
             }
         });
 
-        Button button = rootView.findViewById(R.id.button1);
+        Button button = rootView.findViewById(R.id.button3);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(getActivity(), View_Events_Add.class);
+                Intent myIntent = new Intent(getActivity(), ViewIII_Notebook_Add.class);
                 startActivity(myIntent);
                 myListView.invalidateViews();
             }

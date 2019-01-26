@@ -1,4 +1,4 @@
-package com.example.michal.weekplanner.fragments.View;
+package com.example.michal.weekplanner.views.View;
 
 
 import android.arch.persistence.room.Room;
@@ -11,13 +11,7 @@ import android.widget.TextView;
 
 import com.example.michal.weekplanner.AppDatabase;
 import com.example.michal.weekplanner.R;
-import com.example.michal.weekplanner.fragments.ViewII.ViewII_ShoppingList;
-import com.example.michal.weekplanner.fragments.ViewII.ViewII_ShoppingList_Details;
-import com.example.michal.weekplanner.fragments.ViewII.ViewII_ShoppingList_Edit;
 import com.example.michal.weekplanner.model.Event;
-import com.example.michal.weekplanner.model.ItemList;
-
-import java.util.Date;
 
 public class View_Events_Details extends AppCompatActivity {
     String productName;
@@ -28,6 +22,18 @@ public class View_Events_Details extends AppCompatActivity {
     TextView desc;
     TextView GPS;
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        final int IDD=getIntent().getIntExtra(View_Events.ID_TAG,0);
+        final AppDatabase database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, AppDatabase.DATABASE_NAME2).allowMainThreadQueries().build();
+
+        Event elementToEdit = database.elementEventDao().getElementById(IDD);
+        titleSub.setText(elementToEdit.getTitle());
+        data.setText(elementToEdit.getData());
+        desc.setText(elementToEdit.getDesc());
+        GPS.setText(elementToEdit.getGPS());
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

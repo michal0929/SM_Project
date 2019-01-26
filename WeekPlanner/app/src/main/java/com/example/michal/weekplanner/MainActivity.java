@@ -14,10 +14,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.example.michal.weekplanner.fragments.Start.Start;
-import com.example.michal.weekplanner.fragments.View.View_Events;
-import com.example.michal.weekplanner.fragments.ViewII.ViewII_ShoppingList;
-import com.example.michal.weekplanner.fragments.ViewIII.ViewIII_Notebook;
+import com.example.michal.weekplanner.views.Start.Start;
+import com.example.michal.weekplanner.views.View.View_Events;
+import com.example.michal.weekplanner.views.ViewII.ViewII_ShoppingList;
+import com.example.michal.weekplanner.views.ViewIII.ViewIII_Notebook;
 import com.example.michal.weekplanner.model.ItemSlideMenu;
 import com.example.michal.weekplanner.adapters.SlideMenuAdapter;
 

@@ -9,6 +9,8 @@
     <string name="start">Start</string>
     <string name="viewI">Events</string>
     <string name="viewII">Shopping lists</string>
+    <string name="GPS_start">Jak dojść </string>
+    <string name="word_GPS_enable">gps enabled</string>
     <string name="viewIII">Notebook</string>
 
     <string name="vI_details">Detail events</string>

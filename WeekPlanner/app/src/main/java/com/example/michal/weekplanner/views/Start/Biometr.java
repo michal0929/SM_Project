@@ -1,4 +1,4 @@
-package com.example.michal.weekplanner.fragments.Start;
+package com.example.michal.weekplanner.views.Start;
 
 import android.content.Context;
 import android.hardware.Sensor;
@@ -20,7 +20,7 @@ public class Biometr extends AppCompatActivity implements SensorEventListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.start_sensor);;
+        setContentView(R.layout.start_sensor);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         pressureTv=(TextView)findViewById(R.id.pressure);

@@ -1,7 +1,6 @@
-package com.example.michal.weekplanner.fragments.ViewII;
+package com.example.michal.weekplanner.views.ViewII;
 
 import android.arch.persistence.room.Room;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;

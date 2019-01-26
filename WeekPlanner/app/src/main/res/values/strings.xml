@@ -8,6 +8,8 @@
     <string name="start">Start</string>
     <string name="viewI">Wydarzenia</string>
     <string name="viewII">Lista zakupów</string>
+    <string name="GPS_start">Jak dojść </string>
+    <string name="word_GPS_enable">gps enabled</string>
     <string name="viewIII">Notatnik</string>
 
     <string name="vI_details">Szczegóły wydarzenia</string>

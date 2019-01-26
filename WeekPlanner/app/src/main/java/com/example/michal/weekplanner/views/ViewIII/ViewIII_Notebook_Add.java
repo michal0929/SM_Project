@@ -1,4 +1,4 @@
-package com.example.michal.weekplanner.fragments.View;
+package com.example.michal.weekplanner.views.ViewIII;
 
 import android.arch.persistence.room.Room;
 import android.content.Context;
@@ -10,39 +10,37 @@ import android.widget.EditText;
 
 import com.example.michal.weekplanner.AppDatabase;
 import com.example.michal.weekplanner.R;
-import com.example.michal.weekplanner.model.Event;
-import com.example.michal.weekplanner.model.ItemList;
+import com.example.michal.weekplanner.model.ItemListNotebook;
 
-public class View_Events_Add extends AppCompatActivity {
+public class ViewIII_Notebook_Add extends AppCompatActivity {
 
-    private EditText nameText, descriptionText,dataText, GPSText;
+    private EditText nameText, descriptionText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.view1_list_event_add);
-        getSupportActionBar().setTitle(R.string.addevent);
-        nameText = findViewById(R.id.nameText);
-        descriptionText = findViewById(R.id.descriptionText);
-        dataText = findViewById(R.id.dataadd);
-        GPSText = findViewById(R.id.localText);
+
+        setContentView(R.layout.view3_list_item_add);
+        getSupportActionBar().setTitle(R.string.addnotebook);
+        nameText = findViewById(R.id.nameTextN);
+        descriptionText = findViewById(R.id.descriptionaddN);
+
         Context appContext = getApplicationContext();
         final AppDatabase database = Room.databaseBuilder(appContext, AppDatabase.class, AppDatabase.DATABASE_NAME2).allowMainThreadQueries().build();
 
-        Button button = findViewById(R.id.adevent);
+        Button button = findViewById(R.id.add3);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String name = nameText.getText().toString();
                 String description = descriptionText.getText().toString();
-                String data = dataText.getText().toString();
-                String GPS =GPSText.getText().toString();
 
-                database.elementEventDao().insertAllE(new Event(name,data,description,GPS));
+                database.elementNotebookDao().insertAllN(new ItemListNotebook(name, description));
                 finish();
             }
         });
-        Button can = findViewById(R.id.canceeventadd);
+
+        Button can = findViewById(R.id.cancel3);
         can.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

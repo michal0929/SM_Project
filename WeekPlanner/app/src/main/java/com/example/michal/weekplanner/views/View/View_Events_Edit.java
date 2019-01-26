@@ -1,4 +1,4 @@
-package com.example.michal.weekplanner.fragments.View;
+package com.example.michal.weekplanner.views.View;
 
 import android.arch.persistence.room.Room;
 import android.os.Bundle;
@@ -10,7 +10,6 @@ import android.widget.EditText;
 import com.example.michal.weekplanner.AppDatabase;
 import com.example.michal.weekplanner.R;
 import com.example.michal.weekplanner.model.Event;
-import com.example.michal.weekplanner.model.ItemList;
 
 public class View_Events_Edit extends AppCompatActivity {
 

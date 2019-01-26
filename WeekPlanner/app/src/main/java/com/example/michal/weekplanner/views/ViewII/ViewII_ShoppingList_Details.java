@@ -1,4 +1,4 @@
-package com.example.michal.weekplanner.fragments.ViewIII;
+package com.example.michal.weekplanner.views.ViewII;
 
 
 import android.arch.persistence.room.Room;
@@ -7,63 +7,69 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.michal.weekplanner.AppDatabase;
 import com.example.michal.weekplanner.R;
-import com.example.michal.weekplanner.fragments.ViewII.ViewII_ShoppingList;
-import com.example.michal.weekplanner.fragments.ViewII.ViewII_ShoppingList_Details;
-import com.example.michal.weekplanner.fragments.ViewII.ViewII_ShoppingList_Edit;
 import com.example.michal.weekplanner.model.ItemList;
-import com.example.michal.weekplanner.model.ItemListNotebook;
 
-public class ViewIII_Notebook_Details extends AppCompatActivity {
-
+public class ViewII_ShoppingList_Details extends AppCompatActivity {
 
     TextView titleSub;
     TextView detaiSub;
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.view3_list_item_detail);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(R.string.vIII_details);
-        titleSub=(TextView)findViewById(R.id.textTitleSub);
-        detaiSub=(TextView)findViewById(R.id.textDetailSub);
-
-
-
-        final int IDD=getIntent().getIntExtra(ViewIII_Notebook.ID_TAG,0);
+    public void onResume() {
+        super.onResume();
+        final int IDD=getIntent().getIntExtra(ViewII_ShoppingList.ID_TAG,0);
         final AppDatabase database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, AppDatabase.DATABASE_NAME2).allowMainThreadQueries().build();
 
-
-        ItemListNotebook elementToEdit = database.elementNotebookDao().getElementById(IDD);
+        ItemList elementToEdit = database.elementShoppingDao().getElementById(IDD);
         titleSub.setText(elementToEdit.getTitle());
         detaiSub.setText(elementToEdit.getDesc());
 
-        Button editBtn = findViewById(R.id.edit3);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.view2_list_item_shop_detail);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(R.string.vII_details);
+        titleSub=(TextView)findViewById(R.id.textTitleSub2);
+        detaiSub=(TextView)findViewById(R.id.textDetailSub2);
+
+
+        final int IDD=getIntent().getIntExtra(ViewII_ShoppingList.ID_TAG,0);
+        final AppDatabase database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, AppDatabase.DATABASE_NAME2).allowMainThreadQueries().build();
+
+
+        ItemList elementToEdit = database.elementShoppingDao().getElementById(IDD);
+        titleSub.setText(elementToEdit.getTitle());
+        detaiSub.setText(elementToEdit.getDesc());
+
+        Button editBtn = findViewById(R.id.edit2);
         editBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ViewIII_Notebook_Details.this, ViewIII_Notebook_Edit.class);
+                Intent intent = new Intent(ViewII_ShoppingList_Details.this, ViewII_ShoppingList_Edit.class);
                 intent.putExtra("ID_shop",IDD);
                 startActivity(intent);
             }
         });
-        Button removeBtn = findViewById(R.id.detele3);
+        Button removeBtn = findViewById(R.id.delete2);
         removeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                database.elementNotebookDao().deleteElementN(IDD);
+                database.elementShoppingDao().deleteElement(IDD);
                 finish();
             }
         });
 
-
     }
+
     @Override
     public boolean onSupportNavigateUp(){
         finish();

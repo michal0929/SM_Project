@@ -1,4 +1,4 @@
-package com.example.michal.weekplanner.fragments.ViewIII;
+package com.example.michal.weekplanner.views.ViewIII;
 
 import android.arch.persistence.room.Room;
 import android.os.Bundle;
@@ -9,7 +9,6 @@ import android.widget.EditText;
 
 import com.example.michal.weekplanner.AppDatabase;
 import com.example.michal.weekplanner.R;
-import com.example.michal.weekplanner.model.ItemList;
 import com.example.michal.weekplanner.model.ItemListNotebook;
 
 public class ViewIII_Notebook_Edit extends AppCompatActivity {

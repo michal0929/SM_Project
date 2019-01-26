@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.michal.weekplanner">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,25 +20,27 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".fragments.ViewIII.ViewIII_Notebook_Edit"/>
+            android:name=".views.ViewIII.ViewIII_Notebook_Edit"/>
         <activity
-            android:name=".fragments.ViewIII.ViewIII_Notebook_Add"/>
+            android:name=".views.ViewIII.ViewIII_Notebook_Add"/>
         <activity
-            android:name=".fragments.ViewIII.ViewIII_Notebook_Details"/>
+            android:name=".views.ViewIII.ViewIII_Notebook_Details"/>
         <activity
-            android:name=".fragments.ViewII.ViewII_ShoppingList_Add"/>
+            android:name=".views.ViewII.ViewII_ShoppingList_Add"/>
         <activity
-            android:name=".fragments.ViewII.ViewII_ShoppingList_Edit"/>
+            android:name=".views.ViewII.ViewII_ShoppingList_Edit"/>
         <activity
-            android:name=".fragments.ViewII.ViewII_ShoppingList_Details"/>
+            android:name=".views.ViewII.ViewII_ShoppingList_Details"/>
         <activity
-            android:name=".fragments.View.View_Events_Edit"/>
+            android:name=".views.View.View_Events_Edit"/>
         <activity
-            android:name=".fragments.View.View_Events_Add"/>
+            android:name=".views.View.View_Events_Add"/>
         <activity
-            android:name=".fragments.View.View_Events_Details"/>
+            android:name=".views.View.View_Events_Details"/>
         <activity
-            android:name=".fragments.Start.Biometr"/>
+            android:name=".views.Start.Biometr"/>
+        <activity
+            android:name=".views.Start.GoogleMapsApi.View_GPS"/>
     </application>
 
 </manifest>

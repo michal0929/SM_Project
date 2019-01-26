@@ -1,4 +1,4 @@
-package com.example.michal.weekplanner.fragments.Start;
+package com.example.michal.weekplanner.views.Start;
 
 
 import android.app.Fragment;
@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import com.example.michal.weekplanner.R;
-
+import com.example.michal.weekplanner.views.Start.GoogleMapsApi.View_GPS;
 
 
 public class Start extends Fragment {
@@ -20,8 +20,16 @@ public class Start extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.start, container, false);
 
-        Button button = rootView.findViewById(R.id.button);
+        Button button = rootView.findViewById(R.id.gpsstart);
         button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(getActivity(), View_GPS.class);
+                startActivity(myIntent);
+            }
+        });
+        Button button1 = rootView.findViewById(R.id.button);
+        button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(getActivity(), Biometr.class);
