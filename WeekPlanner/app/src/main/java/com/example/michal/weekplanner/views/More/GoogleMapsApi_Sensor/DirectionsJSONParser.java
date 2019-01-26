@@ -1,4 +1,4 @@
-package com.example.michal.weekplanner.views.Start.GoogleMapsApi;
+package com.example.michal.weekplanner.views.More.GoogleMapsApi_Sensor;
 import com.google.android.gms.maps.model.LatLng;
 
 import org.json.JSONArray;

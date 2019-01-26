@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.michal.weekplanner.views.More.GoogleMapsApi_Sensor.More;
 import com.example.michal.weekplanner.views.Start.Start;
 import com.example.michal.weekplanner.views.View.View_Events;
 import com.example.michal.weekplanner.views.ViewII.ViewII_ShoppingList;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         listSliding.add(new ItemSlideMenu(R.string.viewI));
         listSliding.add(new ItemSlideMenu(R.string.viewII));
         listSliding.add(new ItemSlideMenu(R.string.viewIII));
+        listSliding.add(new ItemSlideMenu(R.string.more));
 
         adapter = new SlideMenuAdapter(this, listSliding);
 
@@ -127,8 +129,11 @@ public class MainActivity extends AppCompatActivity {
             case 2:
                 fragment= new ViewII_ShoppingList(database);
                 break;
-            default:
+            case 3:
                 fragment= new ViewIII_Notebook(database);
+                break;
+            default:
+                fragment= new More();
                 break;
         }
         if(null!=fragment)

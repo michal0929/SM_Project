@@ -8,7 +8,8 @@
     <string name="start">Start</string>
     <string name="viewI">Wydarzenia</string>
     <string name="viewII">Lista zakupów</string>
-    <string name="GPS_start">Jak dojść </string>
+    <string name="more">Więcej..</string>
+    <string name="GPS_start">Sprawdz trasę</string>
     <string name="word_GPS_enable">gps enabled</string>
     <string name="viewIII">Notatnik</string>
 
@@ -39,6 +40,7 @@
     <string name="cancel">Anuluj</string>
     <string name="save">Zapisz</string>
     <string name="pressure">Ciśnienie wynosi: </string>
+    <string name="Biometrr">Biometr</string>
     <string name="Biometr">Sprawdz warunki biometeo</string>
     <string name="Biometrplus">Warunki biometeo: korzystne</string>
     <string name="Biometrminusplus">Warunki biometeo: neutralne</string>

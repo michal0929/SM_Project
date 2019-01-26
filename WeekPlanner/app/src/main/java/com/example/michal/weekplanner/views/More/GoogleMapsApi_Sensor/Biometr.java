@@ -1,4 +1,4 @@
-package com.example.michal.weekplanner.views.Start;
+package com.example.michal.weekplanner.views.More.GoogleMapsApi_Sensor;
 
 import android.content.Context;
 import android.hardware.Sensor;
@@ -20,7 +20,8 @@ public class Biometr extends AppCompatActivity implements SensorEventListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.start_sensor);
+        setContentView(R.layout.more_sensor);
+        getSupportActionBar().setTitle(R.string.Biometrr);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         pressureTv=(TextView)findViewById(R.id.pressure);

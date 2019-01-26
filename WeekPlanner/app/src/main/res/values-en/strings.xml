@@ -9,7 +9,8 @@
     <string name="start">Start</string>
     <string name="viewI">Events</string>
     <string name="viewII">Shopping lists</string>
-    <string name="GPS_start">Jak dojść </string>
+    <string name="more">More...</string>
+    <string name="GPS_start">Check the route</string>
     <string name="word_GPS_enable">gps enabled</string>
     <string name="viewIII">Notebook</string>
 
@@ -41,6 +42,7 @@
     <string name="save">Save</string>
     <string name="Buy">Buy: </string>
     <string name="pressure">The pressure is: </string>
+    <string name="Biometrr">Biometr</string>
     <string name="Biometr">Check the biometeo conditions</string>
     <string name="Biometrplus">The biometeo conditions: beneficial</string>
     <string name="Biometrminusplus">The biometeo conditions: neutral</string>
@@ -52,4 +54,6 @@
         <item quantity="one"> One selected</item>
         <item quantity="other"> %d selected</item>
     </plurals>
+
+
 </resources>

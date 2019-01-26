@@ -1,4 +1,4 @@
-package com.example.michal.weekplanner.views.Start.GoogleMapsApi;
+package com.example.michal.weekplanner.views.More.GoogleMapsApi_Sensor;
 
 import android.content.Context;
 import android.util.Log;

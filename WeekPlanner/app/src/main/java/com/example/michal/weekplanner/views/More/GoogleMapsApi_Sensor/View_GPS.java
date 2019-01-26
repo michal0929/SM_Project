@@ -1,4 +1,4 @@
-package com.example.michal.weekplanner.views.Start.GoogleMapsApi;
+package com.example.michal.weekplanner.views.More.GoogleMapsApi_Sensor;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -23,6 +23,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Interpolator;
@@ -74,7 +75,7 @@ import java.util.HashMap;
 import java.util.List;
 
 
-public class View_GPS extends FragmentActivity implements OnMapReadyCallback
+public class View_GPS extends AppCompatActivity implements OnMapReadyCallback
         , GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         LocationListener {
@@ -130,8 +131,9 @@ public class View_GPS extends FragmentActivity implements OnMapReadyCallback
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.start_local);
-       // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setContentView(R.layout.more_local);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(R.string.GPS_start);
         mGoogleApiClient2 = new GoogleApiClient.Builder(View_GPS.this)
                 .addApi(Places.GEO_DATA_API)
                 .enableAutoManage(this, GOOGLE_API_CLIENT_ID, this)

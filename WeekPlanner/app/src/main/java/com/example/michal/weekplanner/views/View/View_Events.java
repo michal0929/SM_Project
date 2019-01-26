@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -25,6 +26,8 @@ import com.example.michal.weekplanner.model.Event;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.support.constraint.Constraints.TAG;
 
 
 public class View_Events extends Fragment {
@@ -78,7 +81,7 @@ public class View_Events extends Fragment {
             }
         });
 
-        Button button = rootView.findViewById(R.id.button1);
+        final Button button = rootView.findViewById(R.id.button1);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -113,6 +116,7 @@ public class View_Events extends Fragment {
             public boolean onCreateActionMode(ActionMode mode, Menu menu) {
                 MenuInflater inflater1=mode.getMenuInflater();
                 inflater1.inflate(R.menu.my_menu,menu);
+
                 return true;
             }
 
