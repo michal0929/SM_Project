@@ -90,7 +90,7 @@ public class View_GPS extends AppCompatActivity implements OnMapReadyCallback
     double longitude;
     double destLat;
     double destLong;
-    String api_token, address;
+    String address;
     Button startBT;
     AutoCompleteTextView destinationET;
     LocationRequest mLocationRequest;
@@ -115,8 +115,6 @@ public class View_GPS extends AppCompatActivity implements OnMapReadyCallback
     private Location previousLocation;
     private static final long UPDATE_INTERVAL_IN_MILLISECONDS = 10000;
     private static final long FASTEST_UPDATE_INTERVAL_IN_MILLISECONDS = 5000;
-    private static final int REQUEST_CHECK_SETTINGS = 100;
-
     // bunch of location related apis
     private FusedLocationProviderClient mFusedLocationClient;
     private SettingsClient mSettingsClient;
@@ -146,12 +144,9 @@ public class View_GPS extends AppCompatActivity implements OnMapReadyCallback
                     == PackageManager.PERMISSION_GRANTED) {
                 //Location Permission already granted
                 buildGoogleApiClient();
-
             } else {
                 //Request Location Permission
                 checkLocationPermission();
-//                latitude = mLastLocation.getLatitude();
-//                longitude = mLastLocation.getLongitude();
             }
         } else {
             buildGoogleApiClient();
@@ -176,26 +171,6 @@ public class View_GPS extends AppCompatActivity implements OnMapReadyCallback
         destinationET.setAdapter(mPlaceArrayAdapter);
         locationManager = (LocationManager) getSystemService(Service.LOCATION_SERVICE);
         isGPS = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
-        if (!isGPS) {
-            //  showGPSSettingsAlert();
-//            new AlertDialog.Builder(this)
-//                    .setTitle("Location Permission Needed")
-//                    .setMessage("This app needs the Location permission, please accept to use location functionality")
-//                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-//                        @Override
-//                        public void onClick(DialogInterface dialogInterface, int i) {
-//                            //Prompt the user once explanation has been shown
-////                            ActivityCompat.requestPermissions(MapsActivity.this,
-////                                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-////                                    MY_PERMISSIONS_REQUEST_LOCATION);
-//
-//                            showGPSSettingsAlert();
-//                        }
-//                    })
-//                    .create()
-//                    .show();
-
-        }
 
     }
 
@@ -211,7 +186,6 @@ public class View_GPS extends AppCompatActivity implements OnMapReadyCallback
             PendingResult<PlaceBuffer> placeResult = Places.GeoDataApi
                     .getPlaceById(mGoogleApiClient2, placeId);
             placeResult.setResultCallback(mUpdatePlaceDetailsCallback);
-            Log.i(TAG, "Fetching details for ID: " + item.placeId);
         }
     };
 
@@ -234,15 +208,7 @@ public class View_GPS extends AppCompatActivity implements OnMapReadyCallback
             mMap.clear();
             mMap.addMarker(new MarkerOptions().title("My Source").position(new LatLng(mLastLocation.getLatitude() , mLastLocation.getLongitude())));
             mMap.addMarker(new MarkerOptions().title("My destination").position(place.getLatLng()));
-            Toast.makeText(getApplication(), "place" + place.getName() + place.getId(), Toast.LENGTH_LONG).show();
-//            mNameTextView.setText(Html.fromHtml(place.getName() + ""));
-//            mAddressTextView.setText(Html.fromHtml(place.getAddress() + ""));
-//            mIdTextView.setText(Html.fromHtml(place.getId() + ""));
-//            mPhoneTextView.setText(Html.fromHtml(place.getPhoneNumber() + ""));
-//            mWebTextView.setText(place.getWebsiteUri() + "");
-//            if (attributions != null) {
-//                mAttTextView.setText(Html.fromHtml(attributions.toString()));
-//            }
+            Toast.makeText(getApplication(), "place" + place.getName(), Toast.LENGTH_LONG).show();
         }
     };
     @SuppressLint("RestrictedApi")
@@ -254,7 +220,6 @@ public class View_GPS extends AppCompatActivity implements OnMapReadyCallback
             @Override
             public void onLocationResult(LocationResult locationResult) {
                 super.onLocationResult(locationResult);
-                // location is received
                 mLastLocation = locationResult.getLastLocation();
 
             }
@@ -346,7 +311,6 @@ public class View_GPS extends AppCompatActivity implements OnMapReadyCallback
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 15));
             Log.d("location", "Latitude:" + mLastLocation.getLatitude() + "\n" + "Longitude:" + mLastLocation.getLongitude());
 
-//Log.e("tag" , "points" + points.size());
         }
 
 
@@ -484,40 +448,9 @@ public class View_GPS extends AppCompatActivity implements OnMapReadyCallback
     }
 
 
-    public void addMarker(LatLng latLng) {
-        if (mCurrLocationMarker != null) {
-            mCurrLocationMarker.remove();
-            mMap.clear();
-        }
-        mCurrLocationMarker = mMap.addMarker(new MarkerOptions().draggable(true).title("I am here ").position(latLng));
-        //icon(BitmapDescriptorFactory.fromResource(R.mipmap.marker_)));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
-        //   String x = getAddress(latLng.latitude, latLng.longitude);
-        latitude = latLng.latitude;
-        longitude = latLng.longitude;
-//                    Toast.makeText(getApplicationContext(), x, Toast.LENGTH_LONG).show();
-        //  address = getAddress(latitude, longitude);
-        if (address != null)
-            //  TV_city_name_in_map.setText(address);
-            Log.e("address", "nothing happen");
-    }
-
     @Override
     protected void onResume() {
         super.onResume();
-
-        if (mMap != null) { //prevent crashing if the map doesn't exist yet (eg. on starting activity)
-            // mMap.clear();
-//            Log.e(TAG , "sourceLat" +latitude);
-//            Log.e(TAG , "sourceLongi" +longitude);
-//        addMarker(new LatLng(latitude , longitude));
-            // add markers from database to the map
-        }
-        //   addMarker(new LatLng(31 , 30));
-//        if (mGoogleApiClient.isConnected()) {
-//            startLocationUpdates();
-//            Log.d(TAG, "Location update resumed .....................");
-//        }
     }
 
     public void drawRoute(View view) {
@@ -646,17 +579,12 @@ public class View_GPS extends AppCompatActivity implements OnMapReadyCallback
 
             try {
                 jObject = new JSONObject(jsonData[0]);
-                Log.d("ParserTask", jsonData[0].toString());
                 DirectionsJSONParser parser = new DirectionsJSONParser();
-                Log.d("ParserTask", parser.toString());
 
                 // Starts parsing data
                 routes = parser.parse(jObject);
-                Log.d("ParserTask", "Executing routes");
-                Log.d("ParserTask", routes.toString());
 
             } catch (Exception e) {
-                Log.d("ParserTask", e.toString());
                 e.printStackTrace();
             }
             return routes;
@@ -712,90 +640,6 @@ public class View_GPS extends AppCompatActivity implements OnMapReadyCallback
         mGoogleApiClient2.disconnect();
     }
 
-
-    protected void startLocationUpdates() {
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) !=
-                PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-
-            return;
-        }
-        PendingResult<Status> pendingResult = LocationServices.FusedLocationApi
-                .requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
-        mFusedLocationClient.requestLocationUpdates(mLocationRequest,
-                mLocationCallback, Looper.myLooper());
-        Log.d(TAG, "Location update started ..............: ");
-    }
-
-
-    protected void stopLocationUpdates() {
-        LocationServices.FusedLocationApi.removeLocationUpdates(
-                mGoogleApiClient, this);
-        Log.d(TAG, "Location update stopped .......................");
-    }
-
-    public void rotateMarker(final Marker marker, final float toRotation, final float st) {
-        final Handler handler = new Handler();
-        final long start = SystemClock.uptimeMillis();
-        final float startRotation = st;
-        final long duration = 1555;
-
-        final Interpolator interpolator = new LinearInterpolator();
-
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                long elapsed = SystemClock.uptimeMillis() - start;
-                float t = interpolator.getInterpolation((float) elapsed / duration);
-
-                float rot = t * toRotation + (1 - t) * startRotation;
-
-                marker.setRotation(-rot > 180 ? rot / 2 : rot);
-                if (t < 1.0) {
-                    // Post again 16ms later.
-                    handler.postDelayed(this, 16);
-                }
-            }
-        });
-    }
-
-
-    public void animateMarker(final LatLng toPosition, final boolean hideMarke) {
-        final Handler handler = new Handler();
-        final long start = SystemClock.uptimeMillis();
-        Projection proj = mMap.getProjection();
-        Point startPoint = proj.toScreenLocation(m.getPosition());
-        final LatLng startLatLng = proj.fromScreenLocation(startPoint);
-        final long duration = 5000;
-
-        final Interpolator interpolator = new LinearInterpolator();
-
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                long elapsed = SystemClock.uptimeMillis() - start;
-                float t = interpolator.getInterpolation((float) elapsed
-                        / duration);
-                double lng = t * toPosition.longitude + (1 - t)
-                        * startLatLng.longitude;
-                double lat = t * toPosition.latitude + (1 - t)
-                        * startLatLng.latitude;
-                m.setPosition(new LatLng(lat, lng));
-
-                if (t < 1.0) {
-                    // Post again 16ms later.
-                    handler.postDelayed(this, 16);
-                } else {
-                    if (hideMarke) {
-                        m.setVisible(false);
-                    } else {
-                        m.setVisible(true);
-                    }
-                }
-            }
-        });
-    }
 
     private double bearingBetweenLocations(LatLng latLng1, LatLng latLng2) {
 

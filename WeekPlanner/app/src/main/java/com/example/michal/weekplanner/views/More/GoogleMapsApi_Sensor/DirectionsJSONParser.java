@@ -9,9 +9,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * Created by aml on 14/11/18.
- */
 
 public class DirectionsJSONParser {
 
